@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from src.mongo_db import adicionar_produto, buscar_produto_pelo_nome, atualizar_produto, buscar_todos_produtos
 
-# Função para converter os dados em um DataFrame do pandas
 def converter_para_dataframe():
     produtos = buscar_todos_produtos()
     lista_produtos = []
@@ -19,7 +18,6 @@ def converter_para_dataframe():
     df = pd.DataFrame(lista_produtos)
     return df
 
-# Página para adicionar um produto/meta
 def pagina_adicionar_meta():
     st.title("Cadastro de Metas com MongoDB")
 
@@ -49,7 +47,7 @@ def pagina_adicionar_meta():
         else:
             st.error("Por favor, preencha todos os campos obrigatórios.")
 
-# Página para editar um produto/meta existente
+
 def pagina_editar_meta():
     st.title("Editar Meta Existente")
 
@@ -88,7 +86,6 @@ def pagina_editar_meta():
             st.error(f"Produto '{nome_produto_busca}' não encontrado.")
 
 
-# Página para listar os produtos/metas em formato de tabela estilo Excel
 def pagina_listar_metas():
     st.title("Listar Metas em Tabela")
 
