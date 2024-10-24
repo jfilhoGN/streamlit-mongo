@@ -50,7 +50,7 @@ def pagina_adicionar_meta():
 
 def pagina_editar_meta():
     st.title("Editar Meta Existente")
-
+    
     nome_produto_busca = st.text_input("Digite o nome do produto que deseja editar:")
 
     if st.button("Buscar Produto"):
@@ -70,7 +70,6 @@ def pagina_editar_meta():
                 atualizar_button = st.form_submit_button("Atualizar Produto")
 
             if atualizar_button:
-                # Coleta somente os campos que foram alterados
                 dados_atualizados = {
                     "nome": novo_nome if novo_nome else None,
                     "api": nova_api if nova_api else None,
